@@ -21,7 +21,7 @@ class Myapp(wx.App):
         self.Label6 = wx.StaticText(self.startWindow, size=(73, 20), pos=(7, 350), label='交易金额', name='staticText', style=2321)
         self.value_box = wx.TextCtrl(self.startWindow, size=(50, 20), pos=(80, 350), value='0.3', name='text', style=wx.TE_CENTER)
 
-        self.Label9 = wx.StaticText(self.startWindow, size=(100, 20), pos=(130, 350), label='交易times(对)', name='staticText', style=2321)
+        self.Label9 = wx.StaticText(self.startWindow, size=(100, 20), pos=(130, 350), label='交易次数(对)', name='staticText', style=2321)
         self.times_box = wx.TextCtrl(self.startWindow, size=(50, 20), pos=(230, 350), value='15', name='text', style=wx.TE_CENTER)
 
         self.Label5 = wx.StaticText(self.startWindow, size=(30, 20), pos=(290, 350), label='gas', name='staticText', style=2321)

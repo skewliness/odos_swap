@@ -279,6 +279,7 @@ class TASK:
             value = (self.vaule, int(self.vaule * 10 ** 12))['ETH' in from_token_name]
             ETH_value = 0
             token_balance = from_token_name == 'ETH' and 1 or self.token_con.functions.balanceOf(self.account.address).call({'to': from_token_add})
+            unkonwid = (6, 7)[self.chainid == 137]
             if from_token_name == 'ETH':
                 ETH_value = value
                 permit = f'0x01020200050101020201ff{to_token_add[2:].lower().zfill(82)}'
@@ -290,10 +291,10 @@ class TASK:
                 permit = '0x010201000501000201ff00000000000000000000000000000000000000000000'
                 value = token_balance
             elif 'a' in from_token_name:
-                permit = f'0x01020300060101010200ff{from_token_add[2:].lower().zfill(82)}{to_token_add[2:].lower()}'
+                permit = f'0x010203000{unkonwid}0101010200ff{from_token_add[2:].lower().zfill(82)}{to_token_add[2:].lower()}'
                 value = token_balance
             else:
-                permit = f'0x01020300060101010201ff{from_token_add[2:].lower().zfill(82)}{to_token_add[2:].lower()}'
+                permit = f'0x010203000{unkonwid}0101010201ff{from_token_add[2:].lower().zfill(82)}{to_token_add[2:].lower()}'
                 value = (token_balance, value)[token_balance >= value]
             tx = self.swap_con.functions.swap(
                 [(from_token_add, value, self.pool_add, b"")],

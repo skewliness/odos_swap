@@ -54,7 +54,7 @@ jobs:
       - name: 创建压缩包
         run: |
           cd ./dist
-          zip -r ./my_app_MacOS.zip ./my_app.app
+          zip -r ./main.zip ./main.app
       - name: 上传产物
         uses: actions/upload-artifact@v3
         with:

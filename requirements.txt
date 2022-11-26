@@ -1,3 +1,4 @@
 Pypubsub==4.0.3
 web3==5.29.0
 wxPython==4.1.1
+pyinstaller==5.2

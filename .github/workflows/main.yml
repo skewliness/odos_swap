@@ -83,5 +83,5 @@ jobs:
           allowUpdates: true # 覆盖文件
           #draft: true # 草稿 自己可见 版本号会保持一样 默认是自动发布 latest
           #prerelease: true # 预发布 别人可以看到 版本号会继续加
-          body: "更新" # 输出的内容
+          body: "更新" # 输出
           artifacts: "window/*.exe,macos/*.zip"

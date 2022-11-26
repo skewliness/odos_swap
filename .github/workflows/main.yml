@@ -27,12 +27,6 @@ jobs:
       - name: 编译exe
         run: |
           pyinstaller --noconfirm --onefile --windowed "main.py"
-      - name: 测试运行情况
-        uses: GuillaumeFalourd/assert-command-line-output@v2
-        with:
-          command_line: ./dist/main.exe test
-          contains: app run success
-          expected_result: PASSED
       - name: 上传产物
         uses: actions/upload-artifact@v3
         with:
@@ -57,12 +51,6 @@ jobs:
       - name: 编译 MacOS.app
         run: |
           pyinstaller -F -w "main.py"
-      - name: 测试运行情况
-        uses: GuillaumeFalourd/assert-command-line-output@v2
-        with:
-          command_line: ./dist/my_app.app/Contents/MacOS/my_app test
-          contains: app run success
-          expected_result: PASSED
       - name: 创建压缩包
         run: |
           cd ./dist
@@ -95,6 +83,5 @@ jobs:
           allowUpdates: true # 覆盖文件
           #draft: true # 草稿 自己可见 版本号会保持一样 默认是自动发布 latest
           #prerelease: true # 预发布 别人可以看到 版本号会继续加
-          tag: ${{ env.version }} # 版本号 v0.1.0
-          body: ${{ env.body }} # 输出的内容
+          body: ${{ 更新 }} # 输出的内容
           artifacts: "window/*.exe,macos/*.zip"

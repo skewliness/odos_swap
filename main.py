@@ -260,7 +260,7 @@ class TASK:
                         time.sleep(random_sleep)
                         return token_name2 is None and True or self.approve_token(token_name2)
                     else:
-                        wx.CallAfter(pub.sendMessage, "update", msg=f"授权{token_name}交易失败")
+                        wx.CallAfter(pub.sendMessage, "update", msg=f"授权{token_name}交易 失败")
                         return False
                 except Exception as e:
                     wx.CallAfter(pub.sendMessage, "update", msg=f'{token_name}授权失败: {e}')

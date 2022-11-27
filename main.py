@@ -249,7 +249,7 @@ class TASK:
                 signed_tx = self.w3.eth.account.sign_transaction(tx, private_key=self.private_key)
                 try:
                     tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
-                    wx.CallAfter(pub.sendMessage, "update", msg=f"授权{token_name}发送成功")
+                    wx.CallAfter(pub.sendMessage, "update", msg=f"授权{token_name}发送 成功")
                     wx.CallAfter(pub.sendMessage, "update", msg=self.w3.toHex(tx_hash))
                     freceipt = self.w3.eth.waitForTransactionReceipt(tx_hash, 3000)
                     if freceipt.status == 1:

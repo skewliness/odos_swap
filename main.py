@@ -253,7 +253,7 @@ class TASK:
                     wx.CallAfter(pub.sendMessage, "update", msg=self.w3.toHex(tx_hash))
                     freceipt = self.w3.eth.waitForTransactionReceipt(tx_hash, 3000)
                     if freceipt.status == 1:
-                        wx.CallAfter(pub.sendMessage, "update", msg=f"授权{token_name}成功")
+                        wx.CallAfter(pub.sendMessage, "update", msg=f"授权{token_name}成 功")
                         self.nonce += 1
                         random_sleep = random.randint(*self.sleep_time)
                         wx.CallAfter(pub.sendMessage, "update", msg=f"随机延迟{random_sleep}秒")

@@ -6,7 +6,7 @@ from pubsub import pub
 class Myapp(wx.App):
     def __init__(self):
         wx.App.__init__(self)
-        self.frame = wx.Frame(parent=None, title='odos刷交易  合作VX：Fooyao', size=(474, 450), name='frame', style=541072384)
+        self.frame = wx.Frame(parent=None, title='odos-swap', size=(474, 450), name='frame', style=541072384)
         self.startWindow = wx.Panel(self.frame)
         self.frame.Centre()
         self.multiText = wx.TextCtrl(self.startWindow, size=(460, 300), pos=(7, 7), value="", style=wx.TE_MULTILINE | wx.HSCROLL)
@@ -37,8 +37,7 @@ class Myapp(wx.App):
         self.start_button = wx.Button(self.startWindow, size=(40, 35), pos=(390, 375), label='开始', name='button')
         self.start_button.Bind(wx.EVT_BUTTON, self.start_button_click)
         pub.subscribe(self.multiText_updata, "update")
-        self.RPC_check_box_check(1)
-        pub.sendMessage("update", msg='欢迎使用odos刷交易  合作VX：Fooyao 推特：@fooyao158')
+        self.RPC_check_box_check(1)      
         pub.sendMessage("update", msg='选折WETH，即刷ETH-WETH交易对（马蹄为matic—Wmatic）')
         pub.sendMessage("update", msg='选USDC，即刷USDC-aUSDC交易对')
         pub.sendMessage("update", msg='将ETH转WETH再转回ETH,计一次交易')

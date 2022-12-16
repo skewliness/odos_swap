@@ -25,7 +25,7 @@ class Myapp(wx.App):
         self.times_box = wx.TextCtrl(self.startWindow, size=(50, 20), pos=(230, 350), value='15', name='text', style=wx.TE_CENTER)
 
         self.Label5 = wx.StaticText(self.startWindow, size=(30, 20), pos=(290, 350), label='gas', name='staticText', style=2321)
-        self.GAS_box = wx.TextCtrl(self.startWindow, size=(50, 20), pos=(320, 350), value='0.1', name='text', style=wx.TE_CENTER)
+        self.GAS_box = wx.TextCtrl(self.startWindow, size=(50, 20), pos=(320, 350), value='0.0003', name='text', style=wx.TE_CENTER)
 
         self.Label99 = wx.StaticText(self.startWindow, size=(40, 20), pos=(370, 350), label='延迟', name='staticText', style=2321)
         self.delay_box = wx.TextCtrl(self.startWindow, size=(40, 20), pos=(410, 350), value='5-10', name='text', style=wx.TE_CENTER)
